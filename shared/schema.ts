@@ -1,17 +1,10 @@
-import { pgTable, text, serial, timestamp } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const inquiries = pgTable("inquiries", {
-  id: serial("id").primaryKey(),
-  name: text("name").notNull(),
-  consoleType: text("console_type").notNull(),
-  issueDescription: text("issue_description").notNull(),
-  contactInfo: text("contact_info").notNull(),
-  createdAt: timestamp("created_at").defaultNow(),
+export const insertInquirySchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  consoleType: z.string().min(1, "Please select a console model"),
+  issueDescription: z.string().min(10, "Please provide more detail about the issue"),
+  contactInfo: z.string().min(5, "Please provide valid contact information"),
 });
 
-export const insertInquirySchema = createInsertSchema(inquiries).omit({ id: true, createdAt: true });
-
-export type Inquiry = typeof inquiries.$inferSelect;
 export type InsertInquiry = z.infer<typeof insertInquirySchema>;

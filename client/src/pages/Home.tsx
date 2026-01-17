@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertInquirySchema } from "@shared/schema";
-import { useCreateInquiry } from "@/hooks/use-inquiries";
 import { Navbar } from "@/components/Navbar";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
@@ -32,7 +31,7 @@ import { BsNintendoSwitch } from "react-icons/bs";
 
 export default function Home() {
   const { toast } = useToast();
-  const createInquiry = useCreateInquiry();
+  const [isPending, setIsPending] = useState(false);
 
   const form = useForm({
     resolver: zodResolver(insertInquirySchema),
@@ -45,20 +44,16 @@ export default function Home() {
   });
 
   async function onSubmit(data: any) {
-    try {
-      await createInquiry.mutateAsync(data);
+    setIsPending(true);
+    // Simulate API call for frontend-only demo
+    setTimeout(() => {
+      setIsPending(false);
       toast({
         title: "Quote Requested!",
         description: "We'll get back to you shortly.",
       });
       form.reset();
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
-    }
+    }, 1000);
   }
 
   const scrollToContact = () => {
@@ -86,7 +81,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 font-display">
               Your Console’s Health, <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary neon-text">
                 Fixed by the Pros.
@@ -143,7 +138,7 @@ export default function Home() {
       <section id="services" className="py-20 bg-black/40 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Services</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 font-display">Our Services</h2>
             <div className="h-1 w-20 bg-primary mx-auto rounded-full shadow-[0_0_10px_var(--primary)]" />
             <p className="mt-4 text-muted-foreground">Expert diagnostics and repairs for all major issues.</p>
           </div>
@@ -201,7 +196,7 @@ export default function Home() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Transparent Pricing</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 font-display">Transparent Pricing</h2>
             <div className="h-1 w-20 bg-secondary mx-auto rounded-full shadow-[0_0_10px_var(--secondary)]" />
           </div>
 
@@ -220,14 +215,14 @@ export default function Home() {
                 className="glass-card p-8 rounded-2xl text-center hover:border-secondary/50 transition-all duration-300"
               >
                 <h3 className="text-lg font-medium text-muted-foreground mb-4 uppercase tracking-wider font-display">{item.title}</h3>
-                <div className="text-4xl font-bold text-white mb-2 neon-text-blue">{item.price}</div>
+                <div className="text-4xl font-bold text-white mb-2 neon-text-blue font-display">{item.price}</div>
                 <div className="text-sm text-muted-foreground">{item.suffix}</div>
               </motion.div>
             ))}
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-muted-foreground mb-8 bg-card/50 inline-block px-6 py-2 rounded-full border border-white/5">
+            <p className="text-muted-foreground mb-8 bg-card/50 inline-block px-6 py-2 rounded-full border border-white/5 text-sm">
               *Final pricing may vary depending on the fault. Quotes confirmed after inspection.
             </p>
             <div className="flex justify-center">
@@ -262,7 +257,7 @@ export default function Home() {
                   <feature.icon className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                  <h3 className="text-xl font-bold mb-2 font-display">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.text}</p>
                 </div>
               </motion.div>
@@ -280,7 +275,7 @@ export default function Home() {
             className="glass-card p-8 md:p-12 rounded-3xl border border-white/10"
           >
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Get Your Free Quote</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">Get Your Free Quote</h2>
               <p className="text-muted-foreground">Fill out the form below and we'll diagnose the issue.</p>
             </div>
 
@@ -363,9 +358,9 @@ export default function Home() {
                 <Button 
                   type="submit" 
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold h-12 text-lg shadow-[0_0_20px_rgba(57,255,20,0.3)] hover:shadow-[0_0_30px_rgba(57,255,20,0.5)] transition-all"
-                  disabled={createInquiry.isPending}
+                  disabled={isPending}
                 >
-                  {createInquiry.isPending ? "Sending..." : "Submit Inquiry"}
+                  {isPending ? "Sending..." : "Submit Inquiry"}
                 </Button>
               </form>
             </Form>
@@ -376,7 +371,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-black py-12 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold tracking-tighter mb-4">
+          <h2 className="text-2xl font-bold tracking-tighter mb-4 font-display">
             <span className="text-primary neon-text">CONSOLE</span>
             <span className="text-white">DOCTOR</span>
           </h2>
