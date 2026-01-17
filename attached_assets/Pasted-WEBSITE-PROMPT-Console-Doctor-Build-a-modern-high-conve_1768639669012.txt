@@ -1,0 +1,150 @@
+WEBSITE PROMPT — Console Doctor
+
+Build a modern, high-converting FRONTEND-ONLY website for a gaming console repair business called “Console Doctor”.
+Use the provided logo as the brand identity reference.
+
+🎯 Purpose
+
+The website is designed to:
+
+Showcase console repair services
+
+Clearly display quotes & fixed prices
+
+Build trust with gamers
+
+Encourage users to request a quote or contact us
+
+NO backend, NO database, NO login system
+
+🎨 Design & Style
+
+Clean, modern, gaming-inspired design
+
+Dark theme with neon green & blue accents (match logo)
+
+Smooth animations, subtle glow effects
+
+Console / tech repair aesthetic
+
+Mobile-first & fully responsive
+
+Professional but gamer-friendly tone
+
+🧭 Website Structure (Single Page or Multi-section)
+1. Hero Section
+
+Big bold headline:
+“Your Console’s Health, Fixed by the Pros.”
+
+Subtext:
+Fast, affordable repairs for PlayStation, Xbox & Nintendo consoles.
+
+Primary CTA button:
+“Get a Free Quote”
+
+Secondary CTA:
+“View Prices”
+
+Include logo prominently
+
+2. Services Section
+
+Display services as cards with icons:
+
+Console Diagnostics
+
+HDMI Port Repair
+
+Power Supply Repair
+
+Overheating & Fan Cleaning
+
+Disc Drive Repair
+
+Software Issues & Updates
+
+Controller Repairs
+
+3. Supported Consoles
+
+Logos or cards for:
+
+PlayStation (PS4 / PS5)
+
+Xbox (One / Series S / X)
+
+Nintendo Switch
+
+4. Pricing / Quotes Section (Frontend Only)
+
+Clear pricing cards (example layout):
+
+Basic Diagnostic – R250
+
+HDMI Repair – From R900
+
+Overheating Service – From R450
+
+Power Issues – From R650
+
+Include disclaimer text:
+
+Final pricing may vary depending on the fault. Quotes confirmed after inspection.
+
+CTA Button:
+“Request a Quote”
+
+5. Why Choose Console Doctor
+
+Bullet points or icons:
+
+Fast turnaround times
+
+Honest pricing
+
+Gamer-focused service
+
+Quality parts
+
+Trusted local repairs
+
+6. Contact / Quote Form (Frontend Only)
+
+Simple form:
+
+Name
+
+Console Type
+
+Issue Description
+
+Contact Number / Email
+
+Submit button (no backend – demo only)
+
+Optional WhatsApp-style CTA button:
+“Chat With Console Doctor”
+
+7. Footer
+
+Logo
+
+Short tagline:
+Fixing consoles. Saving game nights.
+
+Social icons (placeholders)
+
+Copyright text
+
+⚙️ Technical Notes
+
+Frontend only (HTML, CSS, JS or React)
+
+No backend, no API, no database
+
+Use placeholder form handling
+
+Optimized for performance
+
+SEO-friendly structure
