@@ -18,7 +18,8 @@ export function Navbar() {
     <nav className="fixed w-full z-50 top-0 left-0 border-b border-white/10 bg-background/80 backdrop-blur-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <div className="flex-shrink-0 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+          <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            <img src="/logo.jpg" alt="Logo" className="h-10 w-10 object-contain rounded-sm" />
             <h1 className="text-2xl font-bold tracking-tighter">
               <span className="text-primary neon-text">CONSOLE</span>
               <span className="text-white">DOCTOR</span>

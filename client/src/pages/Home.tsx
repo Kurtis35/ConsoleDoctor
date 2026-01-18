@@ -76,18 +76,12 @@ export default function Home() {
         </div>
 
         <div className="max-w-7xl mx-auto text-center relative z-10">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="mb-8 flex flex-col items-center"
-            >
-              <img 
-                src="/logo.jpg" 
-                alt="Console Doctor Logo" 
-                className="w-48 h-48 md:w-64 md:h-64 object-contain drop-shadow-[0_0_15px_rgba(57,255,20,0.3)]"
-              />
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mt-6 font-display">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 font-display">
               Your Console’s Health, <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary neon-text">
                 Fixed by the Pros.
