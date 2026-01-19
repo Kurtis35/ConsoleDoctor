@@ -375,7 +375,7 @@ export default function Home() {
             <img 
               src="/logo.png" 
               alt="Console Doctor Logo" 
-              className="w-24 h-24 object-contain opacity-80 hover:opacity-100 transition-opacity"
+              className="w-32 h-32 object-contain opacity-80 hover:opacity-100 transition-opacity"
             />
           </div>
           <h2 className="text-2xl font-bold tracking-tighter mb-4 font-display">
