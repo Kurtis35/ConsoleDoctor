@@ -368,6 +368,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Gallery/Showcase Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 font-display">Inside the Lab</h2>
+            <div className="h-1 w-20 bg-primary mx-auto rounded-full shadow-[0_0_10px_var(--primary)]" />
+            <p className="mt-4 text-muted-foreground">Precision repairs, quality parts, and happy consoles.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              className="aspect-square rounded-2xl overflow-hidden border border-white/10 group"
+            >
+              <img src="/gallery/soldering.jpg" alt="Precision Soldering" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1 }}
+              className="aspect-square rounded-2xl overflow-hidden border border-white/10 group"
+            >
+              <img src="/gallery/ps5.jpg" alt="PS5 Repair" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="aspect-square rounded-2xl overflow-hidden border border-white/10 group"
+            >
+              <img src="/gallery/xbox.jpg" alt="Xbox Service" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 }}
+              className="aspect-square rounded-2xl overflow-hidden border border-white/10 group md:col-span-2 lg:col-span-1"
+            >
+              <img src="/gallery/repair-1.jpg" alt="Console Teardown" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4 }}
+              className="aspect-video rounded-2xl overflow-hidden border border-white/10 group lg:col-span-2"
+            >
+              <img src="/gallery/parts.jpg" alt="Quality Replacement Parts" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-black py-12 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -382,7 +435,10 @@ export default function Home() {
             <span className="text-primary neon-text">CONSOLE</span>
             <span className="text-white">DOCTOR</span>
           </h2>
-          <p className="text-muted-foreground mb-8">Fixing consoles. Saving game nights.</p>
+          <p className="text-muted-foreground mb-4">Fixing consoles. Saving game nights.</p>
+          <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-8">
+            Made with <span className="text-red-500">❤️</span> in South Africa
+          </div>
           <div className="text-sm text-gray-500">
             &copy; {new Date().getFullYear()} Console Doctor. All rights reserved.
           </div>
