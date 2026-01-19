@@ -373,7 +373,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-6">
             <img 
-              src="/logo.jpg" 
+              src="/logo.png" 
               alt="Console Doctor Logo" 
               className="w-24 h-24 object-contain opacity-80 hover:opacity-100 transition-opacity"
             />
