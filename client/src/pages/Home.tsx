@@ -29,6 +29,12 @@ import {
 import { FaPlaystation, FaXbox } from "react-icons/fa";
 import { BsNintendoSwitch } from "react-icons/bs";
 
+// Import new console images
+import xboxSeriesXPng from "@assets/WhatsApp_Image_2026-02-11_at_10.28.47_AM_1770892681799.jpeg";
+import xboxSeriesSPng from "@assets/WhatsApp_Image_2026-02-11_at_10.28.46_AM_(2)_1770892681802.jpeg";
+import ps5Png from "@assets/WhatsApp_Image_2026-02-11_at_10.28.46_AM_(1)_1770892681804.jpeg";
+import ps4Png from "@assets/WhatsApp_Image_2026-02-11_at_10.28.46_AM_1770892681806.jpeg";
+
 export default function Home() {
   const { toast } = useToast();
   const [isPending, setIsPending] = useState(false);
@@ -60,8 +66,8 @@ export default function Home() {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const scrollToPricing = () => {
-    document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToServices = () => {
+    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -88,7 +94,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10">
-              Fast, affordable repairs for PlayStation, Xbox & Nintendo consoles. 
+              Fast, professional repairs for PlayStation, Xbox & Nintendo consoles. 
               Get back in the game today.
             </p>
             
@@ -103,10 +109,10 @@ export default function Home() {
               <Button 
                 variant="outline" 
                 size="lg"
-                onClick={scrollToPricing}
+                onClick={scrollToServices}
                 className="border-white/20 hover:bg-white/10 text-lg px-8 py-6 rounded-full transition-all hover:border-secondary hover:text-secondary duration-300"
               >
-                View Prices
+                Our Services
               </Button>
             </div>
           </motion.div>
@@ -190,22 +196,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Pricing/Quote Section */}
       <section id="pricing" className="py-20 relative overflow-hidden">
         <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/2" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 font-display">Transparent Pricing</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 font-display">Service Estimates</h2>
             <div className="h-1 w-20 bg-secondary mx-auto rounded-full shadow-[0_0_10px_var(--secondary)]" />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Basic Diagnostic", price: "R250", suffix: "flat fee" },
-              { title: "HDMI Repair", price: "R900", suffix: "from" },
-              { title: "Overheating Service", price: "R450", suffix: "from" },
-              { title: "Power Issues", price: "R650", suffix: "from" },
+              { title: "Basic Diagnostic", text: "Full system inspection" },
+              { title: "HDMI Repair", text: "Port replacement & micro-soldering" },
+              { title: "Overheating Service", text: "Internal cleaning & thermal paste" },
+              { title: "Power Issues", text: "PSU repair and component replacement" },
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -215,15 +221,15 @@ export default function Home() {
                 className="glass-card p-8 rounded-2xl text-center hover:border-secondary/50 transition-all duration-300"
               >
                 <h3 className="text-lg font-medium text-muted-foreground mb-4 uppercase tracking-wider font-display">{item.title}</h3>
-                <div className="text-4xl font-bold text-white mb-2 neon-text-blue font-display">{item.price}</div>
-                <div className="text-sm text-muted-foreground">{item.suffix}</div>
+                <div className="text-2xl font-bold text-white mb-2 neon-text-blue font-display">Inquire for Quote</div>
+                <div className="text-sm text-muted-foreground">{item.text}</div>
               </motion.div>
             ))}
           </div>
 
           <div className="mt-12 text-center">
             <p className="text-muted-foreground mb-8 bg-card/50 inline-block px-6 py-2 rounded-full border border-white/5 text-sm">
-              *Final pricing may vary depending on the fault. Quotes confirmed after inspection.
+              *All repairs require a physical inspection for a final quote.
             </p>
             <div className="flex justify-center">
               <Button onClick={scrollToContact} variant="secondary" className="font-bold text-secondary-foreground">
@@ -240,7 +246,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {[
               { icon: Timer, title: "Fast Turnaround", text: "Most repairs completed within 24-48 hours so you don't miss the action." },
-              { icon: Tag, title: "Honest Pricing", text: "No hidden fees. You approve the quote before we start any work." },
+              { icon: Tag, title: "Honest Quotes", text: "Transparent pricing structure. You approve the quote before we start any work." },
               { icon: Gamepad2, title: "Gamer Focused", text: "We understand gaming hardware because we are gamers too." },
               { icon: Wrench, title: "Quality Parts", text: "We use premium replacement parts to ensure longevity." },
               { icon: MapPin, title: "Trusted Local", text: "Convenient drop-off points and reliable local service." },
@@ -372,18 +378,18 @@ export default function Home() {
       <section className="py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 font-display">Inside the Lab</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 font-display">Console Showcase</h2>
             <div className="h-1 w-20 bg-primary mx-auto rounded-full shadow-[0_0_10px_var(--primary)]" />
-            <p className="mt-4 text-muted-foreground">Precision repairs, quality parts, and happy consoles.</p>
+            <p className="mt-4 text-muted-foreground">Expert repairs for all next-gen and retro systems.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               className="aspect-square rounded-2xl overflow-hidden border border-white/10 group"
             >
-              <img src="/gallery/soldering.jpg" alt="Precision Soldering" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img src={ps5Png} alt="PS5" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
@@ -391,7 +397,7 @@ export default function Home() {
               transition={{ delay: 0.1 }}
               className="aspect-square rounded-2xl overflow-hidden border border-white/10 group"
             >
-              <img src="/gallery/ps5.jpg" alt="PS5 Repair" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img src={xboxSeriesXPng} alt="Xbox Series X" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
@@ -399,23 +405,15 @@ export default function Home() {
               transition={{ delay: 0.2 }}
               className="aspect-square rounded-2xl overflow-hidden border border-white/10 group"
             >
-              <img src="/gallery/xbox.jpg" alt="Xbox Service" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img src={xboxSeriesSPng} alt="Xbox Series S" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
-              className="aspect-square rounded-2xl overflow-hidden border border-white/10 group md:col-span-2 lg:col-span-1"
+              className="aspect-square rounded-2xl overflow-hidden border border-white/10 group"
             >
-              <img src="/gallery/repair-1.jpg" alt="Console Teardown" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4 }}
-              className="aspect-video rounded-2xl overflow-hidden border border-white/10 group lg:col-span-2"
-            >
-              <img src="/gallery/parts.jpg" alt="Quality Replacement Parts" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img src={ps4Png} alt="PS4" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
             </motion.div>
           </div>
         </div>
@@ -428,7 +426,7 @@ export default function Home() {
             <img 
               src="/logo.png" 
               alt="Console Doctor Logo" 
-              className="w-80 h-80 object-contain opacity-80 hover:opacity-100 transition-opacity"
+              className="w-32 h-32 object-contain opacity-80 hover:opacity-100 transition-opacity"
             />
           </div>
           <h2 className="text-2xl font-bold tracking-tighter mb-4 font-display">
