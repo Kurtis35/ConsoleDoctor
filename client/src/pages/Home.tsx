@@ -435,7 +435,7 @@ export default function Home() {
           </h2>
           <p className="text-muted-foreground mb-4">Fixing consoles. Saving game nights.</p>
           <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-8">
-            Made with <span className="text-red-500">❤️</span> in South Africa
+            Made with <span className="text-red-500">❤️</span> in South Africa by MANA AI
           </div>
           <div className="text-sm text-gray-500">
             &copy; {new Date().getFullYear()} Console Doctor. All rights reserved.
