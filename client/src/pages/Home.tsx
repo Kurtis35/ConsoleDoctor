@@ -249,7 +249,7 @@ export default function Home() {
               { icon: Tag, title: "Honest Quotes", text: "Transparent pricing structure. You approve the quote before we start any work." },
               { icon: Gamepad2, title: "Gamer Focused", text: "We understand gaming hardware because we are gamers too." },
               { icon: Wrench, title: "Quality Parts", text: "We use premium replacement parts to ensure longevity." },
-              { icon: MapPin, title: "Trusted Local", text: "Convenient drop-off points and reliable local service." },
+              { icon: MapPin, title: "Trusted Local", text: "48 Batavia Street, Bothasig. Reliable local service." },
               { icon: CheckCircle2, title: "Warranty", text: "All repairs come with a warranty on parts and labor." },
             ].map((feature, idx) => (
               <motion.div 
@@ -433,6 +433,13 @@ export default function Home() {
             <span className="text-primary neon-text">CONSOLE</span>
             <span className="text-white">DOCTOR</span>
           </h2>
+          <p className="text-muted-foreground mb-4 font-medium">48 Batavia Street, Bothasig</p>
+          <div className="mb-6 space-y-1">
+            <p className="text-sm text-muted-foreground font-semibold">Operating Hours:</p>
+            <p className="text-sm text-muted-foreground">Monday - Friday: 09:30 - 18:30</p>
+            <p className="text-sm text-muted-foreground">Saturday: 08:00 - 12:00</p>
+            <p className="text-xs text-muted-foreground/60 italic pt-1">Closed on Sundays & Public Holidays</p>
+          </div>
           <p className="text-muted-foreground mb-4">Fixing consoles. Saving game nights.</p>
           <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-8">
             Made with <span className="text-red-500">❤️</span> in South Africa by MANA AI
