@@ -309,7 +309,7 @@ export default function Home() {
                       <FormItem>
                         <FormLabel>Phone / Email</FormLabel>
                         <FormControl>
-                          <Input placeholder="082 123 4567" className="bg-background/50 border-white/10 focus:border-primary/50" {...field} />
+                          <Input placeholder="082 956 9698 / consoledoctor@gmail.com" className="bg-background/50 border-white/10 focus:border-primary/50" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -435,7 +435,10 @@ export default function Home() {
           </h2>
           <p className="text-muted-foreground mb-4 font-medium">48 Batavia Street, Bothasig</p>
           <div className="mb-6 space-y-1">
-            <p className="text-sm text-muted-foreground font-semibold">Operating Hours:</p>
+            <p className="text-sm text-muted-foreground font-semibold">Contact Details:</p>
+            <p className="text-sm text-muted-foreground">Phone: 082 956 9698</p>
+            <p className="text-sm text-muted-foreground">Email: consoledoctor@gmail.com</p>
+            <p className="text-sm text-muted-foreground font-semibold pt-2">Operating Hours:</p>
             <p className="text-sm text-muted-foreground">Monday - Friday: 09:30 - 18:30</p>
             <p className="text-sm text-muted-foreground">Saturday: 08:00 - 12:00</p>
             <p className="text-xs text-muted-foreground/60 italic pt-1">Closed on Sundays & Public Holidays</p>
